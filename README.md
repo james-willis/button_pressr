@@ -1,4 +1,4 @@
-#buttonpressr
+# buttonPressr
 > a simple website to learn some php basics
 
 This app is just a toy I'm building to practice some simple php concepts. 
