@@ -1,7 +1,7 @@
 # buttonPressr
 > a simple website to learn some php basics
 
-This app is just a toy I'm building to practice some simple php concepts. 
+This app is just a toy I'm building to practice some simple php concepts. The idea was inspired by a post on /r/node recently.
 
 The goal of the site is to have a single page where users can enter a username and press a button. When any user presses a button, all other users recieve a notification on their screen.
 
