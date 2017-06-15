@@ -1,11 +1,20 @@
 # buttonPressr
 > a simple website to learn some php basics
 
-This app is a toy I'm building to practice some simple php concepts.
+This app is a simple example of how to use WebSockets in php. The WebSocket code is based on the
+chat demo from Ratchet's site.
 
-The goal of the site is to have a single page where users can enter a username and press a button. When any user presses a button, all users recieve a notification on their screen. The idea was inspired by a recent post on /r/node.
+The site is a simple application that shows who has pressed the button recently. The idea for this
+site was inspired by a recent post on reddit's /r/node community.
 
-I'm using the microframework Silex. I'll probably need to do something with websockets but I haven't gotten that far yet. 
+I'm using the web framework Silex for serving the web page and the WebSocket library Ratchet to manage
+realtime communication between button pressers.
+
+## Bugs/Todos
+
+* Display an error message if no username
+* Make the web page pretty
+* Bundle both servers into a single command
 
 ## Install
 
@@ -30,6 +39,12 @@ cd button_pressr
 composer install
 ``` 
 ## Run the site
+Start the web server:
 ```
 php -S localhost:8000 -t web
+```
+
+Start the WebSocket server:
+```
+php socketServer.php
 ```
