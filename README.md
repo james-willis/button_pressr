@@ -1,11 +1,11 @@
 # buttonPressr
 > a simple website to learn some php basics
 
-This app is just a toy I'm building to practice some simple php concepts. The idea was inspired by a post on /r/node recently.
+This app is a toy I'm building to practice some simple php concepts.
 
-The goal of the site is to have a single page where users can enter a username and press a button. When any user presses a button, all other users recieve a notification on their screen.
+The goal of the site is to have a single page where users can enter a username and press a button. When any user presses a button, all users recieve a notification on their screen. The idea was inspired by a recent post on /r/node.
 
-I'm using the microframework Silex and the templating engine Twig. I'll probably need to do something with websockets but I haven't gotten that far yet. 
+I'm using the microframework Silex. I'll probably need to do something with websockets but I haven't gotten that far yet. 
 
 ## Install
 
