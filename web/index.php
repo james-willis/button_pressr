@@ -8,14 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 $app = new Silex\Application();
 $app['debug'] = true;
 
-// Register twig
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
-
-
 $app->get('/', function () use($app) {
-    return $app['twig']->render('index.html');
+	$path = __DIR__."/views/index.html";
+	$index_stream = fopen($path, "rb");
+	$index = fread($index_stream, filesize($path));
+
+	return new Response($index, 200);	
 });
 
 $app->post('/click', function(Request $request) use($app) {
@@ -26,7 +24,7 @@ $app->post('/click', function(Request $request) use($app) {
 	// add click to log
 	// TODO: deal with concurrent accesses to the log
 	$log = fopen('../log.txt', 'ab');
-	$new_entry = $time . ' ' . $name; 
+	$new_entry = $time . ' ' . $name . "\n"; 
 	// TODO error handle writing to log
 	fwrite($log, $new_entry);
 
