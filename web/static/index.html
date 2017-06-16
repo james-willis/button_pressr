@@ -4,26 +4,34 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+			  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+			  crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/main.css">
+
 		<script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous"></script>
         <script src="/static/main.js"></script>
 
-        <title>buttonPressr</title>
+        <title>Press the Button</title>
 
 	</head>
 	<body>
-		<h1>Welcome to buttonpressr</h1>
-		<div class="container">
-			<form id="form">
-				<label class="sr-only" for="name">Name</label>
-				<input id="name" name="name" placeholder="Name" autofocus="" required>
-				<button id="formButton" class="button" action="#">Press Me!</button>
-			</form>
+		<div id="body">
+			<div id="alerts"></div>
 
-		</div>
-		<div id="log">
+			<div id ="buttonContainer" class="container">
+				<form id="form">
+					<img id="formButton" src="/static/button.png">
+					<label class="sr-only" for="name">Name</label>
+					<input id="name" class="form-control" name="name" placeholder="Name" autofocus="" required>
+				</form>
+
+			</div>
+
+			<ul id="log" class="list-group"></ul>
 		</div>
 	</body>
 </html>

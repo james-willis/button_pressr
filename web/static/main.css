@@ -1,0 +1,29 @@
+body {
+	background-color: #8D8D8D;
+}
+#body {
+	width: 500;
+	margin: auto;
+}
+#formButton {
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
+}
+#name {
+	display: block;
+	margin: auto;
+	width: 200px;
+}
+#log {
+	text-align: left;
+}
+#alerts {
+	height: 60px;
+}
+.form-control {
+	background-color: #EBEBEB; 
+}
+.list-group-item {
+	background-color: #EBEBEB; 
+}

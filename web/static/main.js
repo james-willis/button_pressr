@@ -11,6 +11,12 @@ $(document).ready(function(){
 		sendClick($("#name").val());
 		return false;
 	});
+	$("#formButton").mousedown(function(){
+		$("#formButton").attr("src", "/static/button_pressed.png");
+	});	
+	$("#formButton").mouseup(function(){
+		$("#formButton").attr("src", "/static/button.png");
+	});
 });
 
 function connectSocket() {
@@ -26,14 +32,14 @@ function connectSocket() {
 
 function sendClick(clicker) {
 	if (clicker.length === 0) {
-		// TODO error message
-		console.log("enter name plz")
+		$("#alerts").html('<div class="alert alert-danger">Enter Username</div>');
 		return;				
 	}
-
-	var msg = clicker + " clicked the button at " + new Date().toTimeString() + "<br>";
-	conn.send(msg);
-	appendLog(msg);
+	$("#alerts").html('');
+	// TODO santize input
+	var msg = " clicked the button at " + new Date().toTimeString() +'</li>';
+	conn.send('<li class="list-group-item">' + clicker + msg);
+	appendLog('<li class="list-group-item">' + 'you' + msg);
 }
 
 function appendLog(msg){

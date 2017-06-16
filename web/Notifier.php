@@ -1,7 +1,5 @@
 <?php
 
-// A lot of t
-
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
@@ -20,12 +18,14 @@ class Notifier implements MessageComponentInterface {
 
     public function onMessage(ConnectionInterface $from, $msg) {
         echo "New message from {$from->resourceId}\n";
+
         // Forward message on to all other clients
         foreach ($this->clients as $client) {
             if ($from !== $client) {
                 $client->send($msg);
             }
         }
+        fwrite(fopen("../log.txt", "ab"), $msg."\n");
     }
 
     public function onClose(ConnectionInterface $conn) {
@@ -34,7 +34,7 @@ class Notifier implements MessageComponentInterface {
     }
 
     public function onError(ConnectionInterface $conn, \Exception $e) {
-        echo "An error has occurred: {$e->getMessage()}\n";
         $conn->close();
+        echo "An error has occurred: {$e->getMessage()}\n";
     }
 }
