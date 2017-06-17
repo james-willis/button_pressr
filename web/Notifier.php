@@ -25,7 +25,6 @@ class Notifier implements MessageComponentInterface {
                 $client->send($msg);
             }
         }
-        fwrite(fopen("../log.txt", "ab"), $msg."\n");
     }
 
     public function onClose(ConnectionInterface $conn) {
