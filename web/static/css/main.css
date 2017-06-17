@@ -19,7 +19,8 @@ body {
 	text-align: left;
 }
 #alerts {
-	height: 60px;
+	height: 70px;
+	padding-top: 10px;
 }
 #preloader {
 	display: none;

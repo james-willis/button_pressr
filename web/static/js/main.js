@@ -12,10 +12,10 @@ $(document).ready(function(){
 		return false;
 	});
 	$("#formButton").mousedown(function(){
-		$("#formButton").attr("src", "/static/button_pressed.png");
+		$("#formButton").attr("src", "/static/img/button_pressed.png");
 	});	
 	$("#formButton").mouseup(function(){
-		$("#formButton").attr("src", "/static/button.png");
+		$("#formButton").attr("src", "/static/img/button.png");
 	});
 });
 
@@ -26,7 +26,8 @@ function connectSocket() {
 	};
 
 	conn.onmessage = function(e) {
-		appendLog(e.data);
+		var msg = JSON.parse(e.data);
+		appendLog(msg.name, msg.timestamp);
 	};
 }
 
@@ -36,12 +37,16 @@ function sendClick(clicker) {
 		return;				
 	}
 	$("#alerts").html('');
-	// TODO santize input
-	var msg = " clicked the button at " + new Date().toTimeString() +'</li>';
-	conn.send('<li class="list-group-item">' + clicker + msg);
-	appendLog('<li class="list-group-item">' + 'you' + msg);
+	var time = new Date();
+	var msg = {"name": clicker, "timestamp": time};
+	conn.send(JSON.stringify(msg));
+
+	appendLog("You", time);
 }
 
-function appendLog(msg){
+function appendLog(clicker, time){
+	// TODO format time {formatMatcher: "hour,minute"}
+	var formatted_time = new Date(time).toLocaleTimeString("en-US");
+	var msg = '<li class="list-group-item">' + clicker + " clicked the button at " + formatted_time + ".</li>";
 	$("#log").prepend(msg);
 }

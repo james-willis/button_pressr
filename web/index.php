@@ -8,8 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 $app = new Silex\Application();
 $app['debug'] = true;
 
-$app->get('/', function () use($app) {
-	$path = __DIR__."/static/index.html";
+$app->get('/', function () {
+	$path = __DIR__."/static/views/index.html";
 	$index_stream = fopen($path, "rb");
 	$index = fread($index_stream, filesize($path));
 

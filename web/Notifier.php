@@ -17,8 +17,8 @@ class Notifier implements MessageComponentInterface {
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
-        echo "New message from {$from->resourceId}\n";
-
+        echo "New message from {$from->resourceId}, {$msg}\n";
+        // TODO sanitize inputs
         // Forward message on to all other clients
         foreach ($this->clients as $client) {
             if ($from !== $client) {
