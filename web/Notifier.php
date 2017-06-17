@@ -22,7 +22,7 @@ class Notifier implements MessageComponentInterface {
         // Forward message on to all other clients
         foreach ($this->clients as $client) {
             if ($from !== $client) {
-                $client->send($msg);
+                $client->send(htmlspecialchars($msg));
             }
         }
     }
