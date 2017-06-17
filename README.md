@@ -4,7 +4,7 @@
 This app is a simple example of how to use WebSockets in php. The WebSocket code is based on the
 chat demo from Ratchet's site.
 
-The site is a simple application that shows who has pressed the button recently. The idea for this
+The site is a single page app that shows who has pressed the button recently. The idea for this
 site was inspired by a recent post on reddit's /r/node community.
 
 I'm using the web framework Silex for serving the web page and the WebSocket library Ratchet to manage

@@ -21,6 +21,9 @@ body {
 #alerts {
 	height: 60px;
 }
+#preloader {
+	display: none;
+}
 .form-control {
 	background-color: #EBEBEB; 
 }
