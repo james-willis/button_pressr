@@ -5,12 +5,7 @@ This app is a simple example of using WebSockets in php with the Ratchet library
 single page app that shows all active users who has pressed the button since they've loaded the
 page. The idea for this site was inspired by a recent post on reddit's /r/node community.
 
-## Bugs/Todos
-
-* Bundle both servers into a single command
-
 ## Install
-
 
 ### Prerequisites
 
@@ -32,6 +27,7 @@ cd button_pressr
 composer install
 ``` 
 ## Run the site
+
 Start the web server:
 ```bash
 php -S localhost:8000 -t web
